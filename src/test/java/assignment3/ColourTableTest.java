@@ -12,6 +12,14 @@ public class ColourTableTest {
         Assertions.assertEquals(size, colourTable.getSize());
     }
 
+    @ParameterizedTest
+    @ValueSource(strings = {"#FF0000", "025457", "#556B2f", "#FFF00"})
+    public void testAddInvalidColour(String colour) {
+        ColourTable colourTable = new ColourTable(4);
+        colourTable.add(colour);
+        Assertions.assertTrue(colourTable.contains(colour));
+    }
+
 
 
 
