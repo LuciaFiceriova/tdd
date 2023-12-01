@@ -2,6 +2,8 @@ package assignment3;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.HashMap;
 
 public class ColourTable {
     private final int size;
@@ -46,6 +48,20 @@ public class ColourTable {
                 return false;
         return true;
     }
+
+    public boolean checkDuplicates() {
+        Map<String, Integer> frequencyMap = new HashMap<>();
+        for (String colour : colourPalette) {
+            frequencyMap.put(colour, frequencyMap.getOrDefault(colour, 0) + 1);
+        }
+        for (String colour : frequencyMap.keySet()) {
+            if (frequencyMap.get(colour) != 1) {
+                throw new DuplicatesException();
+            }
+        }
+        return false;
+    }
+
 
 
 }
