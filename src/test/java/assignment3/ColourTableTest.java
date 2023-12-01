@@ -30,6 +30,20 @@ public class ColourTableTest {
         Assertions.assertEquals(duplicates, colourTable.checkDuplicates());
     }
 
+    @Test
+    public void testTableFull() {
+        ColourTable colourTable = new ColourTable(4);
+        colourTable.add("#FF0000");
+        colourTable.add("#00FF00");
+        colourTable.add("#0000FF");
+        colourTable.add("#556B2f");
+        colourTable.add("#665D7c");
+        colourTable.add("#FFFFFF");
+        Assertions.assertTrue(colourTable.isTableFull());
+    }
+
+
+
 
 
 

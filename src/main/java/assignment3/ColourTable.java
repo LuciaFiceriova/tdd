@@ -62,6 +62,13 @@ public class ColourTable {
         return false;
     }
 
+    public boolean isTableFull() {
+        if (colourPalette.size() > size) {
+            throw new TableFullException();
+        }
+        return true;
+    }
+
 
 
 }
